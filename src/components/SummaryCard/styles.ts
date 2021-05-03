@@ -20,7 +20,7 @@ export const Card = styled.div`
     line-height: 3 rem;
   }
 
-  :last-child {
+  &:last-child {
     background: var(--secondary);
     color: var(--shape);
   }
