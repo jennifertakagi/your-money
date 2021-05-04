@@ -24,11 +24,11 @@ const summaryCardHash = [
   },
 ];
 
-export function Summary () {
+export function Summary() {
   return (
     <Container>
       {summaryCardHash.map(summaryCard => (
-        <SummaryCard 
+        <SummaryCard
           title={summaryCard.title}
           image={summaryCard.image}
           value={summaryCard.value}

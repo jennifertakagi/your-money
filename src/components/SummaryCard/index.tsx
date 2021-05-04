@@ -6,7 +6,7 @@ interface SummaryCardProps {
   value: string;
 }
 
-export function SummaryCard ({ image, title, value }: SummaryCardProps) {
+export function SummaryCard({ image, title, value }: SummaryCardProps) {
   return (
     <Card>
       <header>
