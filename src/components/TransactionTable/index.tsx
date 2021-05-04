@@ -11,8 +11,7 @@ export function TransactionTable() {
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
 
   useEffect(() => {
-    api('/transitions')
-      .then(response => setTransactions(response.data));
+    api('/transitions').then(response => setTransactions(response.data));
   }, []);
 
   return (
@@ -41,5 +40,5 @@ export function TransactionTable() {
         </tbody>
       </table>
     </Container>
-  )
+  );
 }

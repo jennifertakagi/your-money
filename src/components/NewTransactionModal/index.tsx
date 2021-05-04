@@ -7,13 +7,13 @@ interface NewTransactionModalProps {
   onRequestClose: () => void;
 }
 
-export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
+export function NewTransactionModal({
+  isOpen,
+  onRequestClose,
+}: NewTransactionModalProps) {
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-    >
+    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       <h2>New Transaction</h2>
     </Modal>
-  )
+  );
 }

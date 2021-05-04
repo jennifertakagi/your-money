@@ -14,5 +14,5 @@ export function TransactionCard({
       <td>{category}</td>
       <td>{created}</td>
     </tr>
-  )
+  );
 }

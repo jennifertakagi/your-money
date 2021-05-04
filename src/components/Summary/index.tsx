@@ -35,5 +35,5 @@ export function Summary() {
         />
       ))}
     </Container>
-  )
+  );
 }
