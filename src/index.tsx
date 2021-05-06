@@ -9,14 +9,37 @@ createServer({
     transaction: Model,
   },
 
+  seeds(server) {
+    server.db.loadData({
+      transactions: [
+        {
+          id: 1,
+          title: 'Salary',
+          type: 'deposit',
+          category: 'Dev',
+          amount: 6000,
+          createdAt: new Date('2021-05-06 20:20'),
+        },
+        {
+          id: 2,
+          title: 'Apartment',
+          type: 'withdrawal',
+          category: 'Home',
+          amount: 1200,
+          createdAt: new Date('2021-05-01 09:00'),
+        },
+      ],
+    });
+  },
+
   routes() {
     this.namespace = 'api';
 
-    this.get('/transitions', () => {
+    this.get('/transactions', () => {
       return this.schema.all('transaction');
     });
 
-    this.post('/transitions', (schema, request) => {
+    this.post('/transactions', (schema, request) => {
       const data = JSON.parse(request.requestBody);
 
       return schema.create('transaction', data);
