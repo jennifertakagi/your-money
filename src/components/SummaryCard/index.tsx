@@ -3,17 +3,17 @@ import { Card } from './styles';
 interface SummaryCardProps {
   image: string;
   title: string;
-  value: string;
+  amount: string;
 }
 
-export function SummaryCard({ image, title, value }: SummaryCardProps) {
+export function SummaryCard({ image, title, amount }: SummaryCardProps) {
   return (
     <Card>
       <header>
         <p>{title}</p>
         <img src={image} alt={image} />
       </header>
-      <strong>{value}</strong>
+      <strong>{amount}</strong>
     </Card>
   );
 }

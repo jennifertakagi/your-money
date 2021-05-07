@@ -10,17 +10,17 @@ const summaryCardHash = [
   {
     title: 'Incomes',
     image: IncomeImg,
-    value: '$ 1.000',
+    amount: '$ 1.000',
   },
   {
     title: 'Outcomes',
     image: OutcomeImg,
-    value: '- $ 500',
+    amount: '- $ 500',
   },
   {
     title: 'Total',
     image: TotalImg,
-    value: '$ 5000',
+    amount: '$ 5000',
   },
 ];
 
@@ -31,7 +31,7 @@ export function Summary() {
         <SummaryCard
           title={summaryCard.title}
           image={summaryCard.image}
-          value={summaryCard.value}
+          amount={summaryCard.amount}
         />
       ))}
     </Container>
