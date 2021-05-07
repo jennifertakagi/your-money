@@ -6,3 +6,5 @@ export interface ITransaction {
   category: string;
   createdAt: string;
 }
+
+export type INewTransaction = Omit<ITransaction, 'id' | 'createdAt'>;
