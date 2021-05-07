@@ -1,13 +1,19 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 
 import { api } from '../services/api';
-import { ITransaction } from '../types/constants';
+import { ITransaction, INewTransaction } from '../types/constants';
 
+interface ITransactionsContext {
+  createTransaction: (transaction: INewTransaction) => Promise<void>;
+  transactions: ITransaction[];
+}
 interface TransactionsProviderProps {
   children: ReactNode;
 }
 
-export const TransactionsContext = createContext<ITransaction[]>([]);
+export const TransactionsContext = createContext<ITransactionsContext>(
+  {} as ITransactionsContext,
+);
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
@@ -19,8 +25,14 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     });
   }, []);
 
+  async function createTransaction(newTransaction: INewTransaction) {
+    const response = await api.post('/transactions', newTransaction);
+    const { transaction } = response.data;
+
+    setTransactions([...transactions, transaction]);
+  }
   return (
-    <TransactionsContext.Provider value={transactions}>
+    <TransactionsContext.Provider value={{ createTransaction, transactions }}>
       {children}
     </TransactionsContext.Provider>
   );
