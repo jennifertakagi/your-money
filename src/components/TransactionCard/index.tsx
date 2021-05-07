@@ -5,14 +5,19 @@ export function TransactionCard({
   amount,
   type,
   category,
-  created,
+  createdAt,
 }: Omit<ITransaction, 'id'>) {
   return (
     <tr>
       <td>{title}</td>
-      <td className={type}>{amount}</td>
+      <td className={type}>
+        {new Intl.NumberFormat('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+        }).format(amount)}
+      </td>
       <td>{category}</td>
-      <td>{created}</td>
+      <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(createdAt))}</td>
     </tr>
   );
 }

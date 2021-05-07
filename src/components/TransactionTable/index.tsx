@@ -37,7 +37,7 @@ export function TransactionTable() {
               amount={transition.amount}
               type={transition.type}
               category={transition.category}
-              created={transition.created}
+              createdAt={transition.createdAt}
             />
           ))}
         </tbody>
