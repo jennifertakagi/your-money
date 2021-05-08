@@ -21,6 +21,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  body, html {
+    @media (max-width: 720px) {
+      overflow-x: hidden;
+    }
   }
 
   html {

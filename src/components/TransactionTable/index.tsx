@@ -11,11 +11,13 @@ export function TransactionTable() {
     <Container>
       <table>
         <thead>
-          <tr>
+          <tr className="title">
             <th>Title</th>
             <th>Amount</th>
             <th>Category</th>
             <th>Date</th>
+            <th className="mobileTitle">Listing</th>
+            <th className="mobileTitle">{`${transactions.length} items`}</th>
           </tr>
         </thead>
 

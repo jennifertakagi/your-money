@@ -24,4 +24,9 @@ export const Card = styled.div`
     background: var(--secondary);
     color: var(--shape);
   }
+
+  @media (max-width: 720px) {
+    width: 21rem;
+    height: 14rem;
+  }
 `;
